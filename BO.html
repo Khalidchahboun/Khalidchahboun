@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>N Floating NavBar [Contest]</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+    <script></script>
+</head>
+
+<body>
+    <header class="morph-out">
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h4>Logo</h4>
+        <a class="link" href="https://www.facebook.com"><img src="VG.png" alt="Image 1">
+            <i class="icon-badge"></i> KHALID CHAHBOUN</a>
+        <div class="themeChanger">
+            <i class="icon-layers"></i>
+            <div class="morph-in toggle">
+                <div class="morph-out toggler">
+                    <div class="morph-out circle"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="morph-out navbar">
+        <ul>
+            <li class="active">
+                <a href="#home">
+                    <span class="morph-out">Home</span>
+                    <i class="icon-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#about">
+                    <span class="morph-out">About</span>
+                    <i class="icon-user"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#project">
+                    <span class="morph-out">Project</span>
+                    <i class="icon-notebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#skills">
+                    <span class="morph-out">Skills</span>
+                    <i class="icon-badge"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    <span class="morph-out">Contact</span>
+                    <i class="icon-envelope"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" id="home">
+        <h3>Home</h3>
+        <main>
+            <div class="slider">
+                <img src="FI2 101V.png" alt="Image 1">
+                <img src="FI2 101V.png" alt="Image 2">
+                <img src="FI2 101V.png" alt="Image 3">
+                <img src="FI2 101V.png" alt="Image 4">
+                <img src="FI2 101V.png" alt="Image 5">
+            </div>
+        </main>
+    </div>
+    <main>
+        <div class="slider">
+            <img src="FI2 101V.png" alt="Image 1">
+            <img src="FI2 101V.png" alt="Image 2">
+            <img src="FI2 101V.png" alt="Image 3">
+            <img src="FI2 101V.png" alt="Image 4">
+            <img src="FI2 101V.png" alt="Image 5">
+        </div>
+    </main>
+    <div class="container" id="about">
+        <h3>About</h3>
+    </div>
+    <div class="container" id="project">
+        <h3>Projects</h3>
+    </div>
+    <div class="container" id="skills">
+        <h3>Skills</h3>
+    </div>
+    <div class="container" id="contact">
+        <h3>Contact</h3>
+    </div>
+
+    <style>
+        *,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Montserrat;
+        }
+        
+        * {
+            transition: background-color .5s ease-in-out;
+        }
+        
+         :root {
+            --bg: #dee9fd;
+            --content-bg: #dee9f7;
+            --primary: #edf3ff;
+            /*bottom*/
+            --secondary: #b7c4dd;
+            /*top*/
+            --border-color: #e2ecfd;
+            --active: #ff4000;
+            --dark: #404040;
+            --footer: #162940;
+        }
+        
+        html,
+        body {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+        
+        body {
+            background-color: var(--bg);
+        }
+        
+        a,
+        a:active,
+        a:focus,
+        a:visited {
+            text-decoration: none;
+        }
+        
+        i {
+            font-size: 16px;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        .morph-in {
+            box-shadow: -6px -6px 8px var(--primary) inset, 6px 6px 8px var(--secondary) inset;
+            background-color: var(--content-bg);
+            border: 0.5px solid var(--border-color);
+        }
+        
+        .morph-out {
+            box-shadow: -6px -6px 10px var(--primary), 6px 6px 10px var(--secondary);
+            background-color: var(--content-bg);
+            border: 0.5px solid var(--border-color);
+            color: var(--dark);
+        }
+        
+        .morph-in a {
+            color: var(--active);
+        }
+        
+        header {
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        header h4 {
+            flex: 1;
+            color: var(--dark);
+        }
+        
+        header .menu {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            flex: 0.2;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        header .menu span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 50%;
+            background: var(--dark);
+            opacity: 1;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        header .menu span:nth-child(even) {
+            left: 50%;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        header .menu span:nth-child(odd) {
+            left: 0px;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        header .menu span:nth-child(1),
+        header .menu span:nth-child(2) {
+            top: 0px;
+        }
+        
+        header .menu span:nth-child(3),
+        header .menu span:nth-child(4) {
+            top: 5px;
+        }
+        
+        header .menu span:nth-child(5),
+        header .menu span:nth-child(6) {
+            top: 10px;
+        }
+        
+        header .menu.open span:nth-child(1),
+        header .menu.open span:nth-child(6) {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
+        header .menu.open span:nth-child(2),
+        header .menu.open span:nth-child(5) {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        
+        header .menu.open span:nth-child(1) {
+            left: 4px;
+            top: 4px;
+        }
+        
+        header .menu.open span:nth-child(2) {
+            right: 4px;
+            top: 4px;
+        }
+        
+        header .menu.open span:nth-child(3) {
+            left: -50%;
+            opacity: 0;
+        }
+        
+        header .menu.open span:nth-child(4) {
+            left: 100%;
+            opacity: 0;
+        }
+        
+        #header .menu.open span:nth-child(4) {
+            left: 100%;
+            opacity: 0;
+        }
+        
+        header .menu.open span:nth-child(5) {
+            left: 4px;
+            top: 10px;
+        }
+        
+        header .menu.open span:nth-child(6) {
+            right: 4px;
+            top: 10px;
+        }
+        
+        header .link {
+            font-size: 12px;
+            font-weight: 600;
+            flex: 1;
+            color: var(--dark);
+        }
+        
+        header .themeChanger {
+            flex: 0.5;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .toggle {
+            width: 60px;
+            height: 30px;
+            border-radius: 12px;
+            padding: 4px;
+            margin-left: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .toggler {
+            width: 40%;
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 1px solid var(--active);
+        }
+        
+        .switch-on {
+            animation: .5s toggle-on ease-in-out forwards;
+        }
+        
+        .switch-off {
+            animation: .5s toggle-off ease-in-out forwards;
+        }
+        /*KJ6M3ryjq3Wkt1sODaF/9envg+QcmG0WsIt/ksyqyssJUEqvshawhPmQxd0R27fPjD4urPGzpinCzl8g1VriMg==*/
+        
+        nav {
+            position: fixed;
+            transform-style: preserve-3d;
+            top: 50%;
+            left: 0px;
+            transform: translate(-50%, -50%) translateX(-500px);
+            width: 50px;
+            height: 250px;
+            background-color: var(--bg);
+            border-radius: 50px;
+            transition: transform 0.6s ease;
+        }
+        
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 50px;
+            height: 100%;
+        }
+        
+        nav ul li {
+            text-align: center;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav ul li a {
+            display: block;
+            position: relative;
+            height: 100%;
+            padding: 10px;
+            border-radius: 50%;
+            color: var(--light);
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+        
+        nav ul li span {
+            position: absolute;
+            transform-origin: left center;
+            transform: scale(0) translateZ(-10px);
+            top: 5px;
+            left: 30px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            font-weight: 400;
+            color: #fff;
+            border-radius: 50px;
+            width: auto;
+            padding: 5px 10px;
+            padding-left: 30px;
+            transition: transform 0.6s ease;
+        }
+        
+        .show {
+            color: var(--active);
+            transform: scale(1) translateZ(-10px);
+            transition: transform 0.6s ease;
+        }
+        
+        .show-menu {
+            transform: translate(0%, -50%) translateX(10px);
+            transition: transform 0.6s ease;
+            top: 30%;
+        }
+        
+        .active {
+            box-shadow: -6px -6px 8px var(--primary) inset, 6px 6px 8px var(--secondary) inset;
+            background-color: var(--content-bg);
+            border: 0.5px solid var(--border-color);
+        }
+        
+        .container {
+            height: 100%;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            padding: 20px 10px;
+            width: 100%;
+            background-color: var(--footer);
+            color: var(--secondary);
+            font-family: sans-serif;
+        }
+        
+        footer p {
+            text-align: center;
+        }
+        
+        @keyframes toggle-on {
+            from {
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(30px);
+            }
+        }
+        
+        @keyframes toggle-off {
+            from {
+                transform: translateX(30px);
+            }
+            to {
+                transform: translateX(0px);
+            }
+        }
+        
+        @media screen and (max-width: 640px) {
+            aside {
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                top: 50px;
+                left: 0;
+                z-index: 1;
+            }
+        }
+    </style>
+    <script>
+        const _0x59af = ['#e2ecfd', 'show-menu', 'morph-in', 'scroll', '#b7c4dd', 'click', 'open', '#152447', 'classList', '#14244d', 'children', '#0b1630', 'documentElement', 'setProperty', 'offsetTop', 'circle\x20morph-in', 'toggle', 'add', 'nav', 'forEach', 'entries', '#dee9fd', 'addEventListener', 'toggler\x20morph-in\x20switch-off', 'style', 'show', '#162940', 'remove', 'querySelector', '#404040', 'length', '#192c5c', '.container', 'currentTarget', '#eee', 'header\x20.menu', '#e43f5a', '#dee9f7', 'querySelectorAll', 'className', '#edf3ff', 'active', 'childNodes', 'scrollY', 'switch-on'];
+        (function(_0x5e45d0, _0x59af94) {
+            const _0x8f84c = function(_0x279c74) {
+                while (--_0x279c74) {
+                    _0x5e45d0['push'](_0x5e45d0['shift']());
+                }
+            };
+            _0x8f84c(++_0x59af94);
+        }(_0x59af, 0x1f0));
+        const _0x8f84 = function(_0x5e45d0, _0x59af94) {
+            _0x5e45d0 = _0x5e45d0 - 0x0;
+            let _0x8f84c = _0x59af[_0x5e45d0];
+            return _0x8f84c;
+        };
+        onload = function() {
+            const _0x3d7e3b = [...document[_0x8f84('0x25')]('ul\x20li')],
+                _0x437538 = document['querySelectorAll'](_0x8f84('0x1f')),
+                _0x3ebe7b = document[_0x8f84('0x1b')](_0x8f84('0x22')),
+                _0x3bbfdd = document[_0x8f84('0x1b')](_0x8f84('0x11')),
+                _0x531458 = document[_0x8f84('0x1b')]('.toggler'),
+                _0x2501e4 = document[_0x8f84('0xb')],
+                _0x4a237f = {
+                    '--bg': _0x8f84('0x6'),
+                    '--content-bg': _0x8f84('0x6'),
+                    '--primary': _0x8f84('0x8'),
+                    '--secondary': _0x8f84('0xa'),
+                    '--border-color': _0x8f84('0x1e'),
+                    '--active': _0x8f84('0x23'),
+                    '--dark': _0x8f84('0x21'),
+                    '--footer': _0x8f84('0x23')
+                },
+                _0x41c5a3 = {
+                    '--bg': _0x8f84('0x14'),
+                    '--content-bg': _0x8f84('0x24'),
+                    '--primary': _0x8f84('0x27'),
+                    '--secondary': _0x8f84('0x3'),
+                    '--border-color': _0x8f84('0x2c'),
+                    '--active': '#ff4000',
+                    '--dark': _0x8f84('0x1c'),
+                    '--footer': _0x8f84('0x19')
+                };
+            _0x3d7e3b[_0x8f84('0x12')]((_0xc15efd, _0x59e757) => {
+                _0xc15efd['addEventListener'](_0x8f84('0x4'), function(_0x1e6066) {
+                    const _0x40e963 = document[_0x8f84('0x1b')]('.active'),
+                        _0x170045 = _0x40e963['childNodes'][0x1][_0x8f84('0x29')][0x1],
+                        _0x3e84ed = _0x1e6066[_0x8f84('0x20')][_0x8f84('0x29')][0x1][_0x8f84('0x29')][0x1];
+                    _0x40e963 && (_0x40e963[_0x8f84('0x7')][_0x8f84('0x1a')](_0x8f84('0x28')), _0x170045[_0x8f84('0x7')][_0x8f84('0x1a')](_0x8f84('0x18'))), _0x3e84ed[_0x8f84('0x7')][_0x8f84('0x10')](_0x8f84('0x18')), _0x1e6066[_0x8f84('0x20')][_0x8f84('0x7')][_0x8f84('0x10')](_0x8f84('0x28')), setTimeout(function() {
+                        _0x3e84ed[_0x8f84('0x7')][_0x8f84('0x1a')]('show');
+                    }, 0xbb8);
+                });
+            }), _0x3ebe7b[_0x8f84('0x15')](_0x8f84('0x4'), function(_0x528453) {
+                _0x3ebe7b[_0x8f84('0x7')][_0x8f84('0xf')]('open'), _0x3bbfdd[_0x8f84('0x7')][_0x8f84('0xf')](_0x8f84('0x0'));
+            });
+
+            function _0x58e926() {
+                _0x3ebe7b[_0x8f84('0x7')]['add'](_0x8f84('0x5'));
+                let _0x3a4705 = _0x437538[_0x8f84('0x1d')];
+                while (--_0x3a4705 && window[_0x8f84('0x2a')] + 0x15e < _0x437538[_0x3a4705][_0x8f84('0xd')]);
+                _0x3d7e3b[_0x8f84('0x12')](_0x34b386 => {
+                    _0x34b386[_0x8f84('0x7')]['remove'](_0x8f84('0x1'));
+                    const _0x3f506e = _0x34b386[_0x8f84('0x29')][0x1][_0x8f84('0x29')][0x1];
+                    _0x3f506e[_0x8f84('0x7')][_0x8f84('0x1a')](_0x8f84('0x18'));
+                });
+                const _0x2ec891 = _0x3d7e3b[_0x3a4705][_0x8f84('0x29')][0x1][_0x8f84('0x29')][0x1];
+                _0x2ec891[_0x8f84('0x7')][_0x8f84('0x10')](_0x8f84('0x18')), _0x3d7e3b[_0x3a4705][_0x8f84('0x7')][_0x8f84('0x10')](_0x8f84('0x1')), _0x3bbfdd[_0x8f84('0x7')][_0x8f84('0x10')](_0x8f84('0x0'));
+            }
+            _0x58e926(), window[_0x8f84('0x15')](_0x8f84('0x2'), _0x58e926), _0x531458[_0x8f84('0x15')](_0x8f84('0x4'), function(_0x5b0b15) {
+                let _0x1207d4 = _0x5b0b15[_0x8f84('0x20')],
+                    _0x1b4c3d = _0x5b0b15[_0x8f84('0x20')][_0x8f84('0x9')][0x0];
+                if (_0x1207d4[_0x8f84('0x7')]['contains'](_0x8f84('0x2b'))) {
+                    _0x1b4c3d[_0x8f84('0x26')] = 'circle\x20morph-out', _0x1207d4[_0x8f84('0x26')] = _0x8f84('0x16');
+                    for (const [_0x1e5e1c, _0x10cb5c] of Object[_0x8f84('0x13')](_0x41c5a3)) {
+                        _0x2501e4[_0x8f84('0x17')][_0x8f84('0xc')](_0x1e5e1c, _0x10cb5c);
+                    }
+                } else {
+                    _0x1b4c3d['className'] = _0x8f84('0xe'), _0x1207d4[_0x8f84('0x26')] = 'toggler\x20morph-out\x20switch-on';
+                    for (const [_0x4d00cb, _0x31110b] of Object['entries'](_0x4a237f)) {
+                        _0x2501e4[_0x8f84('0x17')]['setProperty'](_0x4d00cb, _0x31110b);
+                    }
+                }
+            })
+        };
+    </script>
+</body>
+
+</html>
